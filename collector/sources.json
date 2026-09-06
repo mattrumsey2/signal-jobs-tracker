@@ -1,0 +1,93 @@
+{
+  "_note": "International news networks first. adapter: workday|greenhouse|lever|smartrecruiters run automatically. adapter: verify entries are documented but skipped by the runner until an endpoint is confirmed. Set enabled:false to pause a source. alwaysSport:true skips the sport keyword filter (use only for sport-only brands).",
+
+  "sources": [
+    {
+      "employer": "Reuters",
+      "adapter": "workday",
+      "enabled": true,
+      "confidence": "confirmed",
+      "tenant": "thomsonreuters",
+      "dc": "wd5",
+      "site": "External_Career_Site",
+      "brandSite": "https://www.reuters.com",
+      "searchTerms": ["sport", "reporter", "correspondent", "presenter", "producer"],
+      "alwaysSport": false,
+      "maxList": 200,
+      "maxDetail": 80,
+      "notes": "Thomson Reuters Workday tenant confirmed live. News + sport roles surface under sport keyword filter."
+    },
+    {
+      "employer": "CNN / WBD",
+      "adapter": "workday",
+      "enabled": true,
+      "confidence": "confirmed",
+      "tenant": "warnerbros",
+      "dc": "wd5",
+      "site": "global",
+      "brandSite": "https://edition.cnn.com",
+      "searchTerms": ["sport", "reporter", "correspondent", "presenter", "anchor", "producer"],
+      "alwaysSport": false,
+      "maxList": 300,
+      "maxDetail": 100,
+      "notes": "Warner Bros. Discovery Workday tenant confirmed live. Covers CNN, CNN International, HLN, CNN en Español AND Eurosport — Eurosport rows pass the sport filter naturally."
+    },
+
+    {
+      "employer": "Al Jazeera",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "bespoke",
+      "careers_url": "https://careers.aljazeera.net/vacancies/",
+      "notes": "Bespoke portal, no standard public JSON found. Options: (1) write a custom adapter against careers.aljazeera.net if it exposes an internal API; (2) use the manual paste path. Historically also accepts email applications (ejobs@aljazeera.net). In manual.json as a pinned watch row."
+    },
+    {
+      "employer": "BBC",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "bespoke",
+      "careers_url": "https://careers.bbc.co.uk",
+      "notes": "Bespoke BBC careers platform. Check for an RSS/JSON feed on careers.bbc.co.uk before writing a custom adapter. In manual.json as a pinned watch row."
+    },
+    {
+      "employer": "Bloomberg",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "bespoke",
+      "careers_url": "https://www.bloomberg.com/company/careers/",
+      "notes": "Bespoke portal. Verify whether careers.bloomberg.com exposes a JSON search endpoint; otherwise manual path."
+    },
+    {
+      "employer": "NBCUniversal (CNBC / NBC News / Sky News)",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "verify",
+      "careers_url": "https://www.nbcunicareers.com",
+      "notes": "Comcast/NBCUniversal. Confirm the ATS behind nbcunicareers.com (historically a bespoke/BrassRing setup). Sky News/Sky Sports UK sit under careers.sky.com — verify that platform separately; it may differ from the US NBCU system."
+    },
+    {
+      "employer": "France 24 / France Médias Monde",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "verify",
+      "careers_url": "https://www.francemediasmonde.com/en/careers",
+      "notes": "French public broadcaster group (France 24, RFI, MCD). Check for a standard ATS; likely a French recruitment platform."
+    },
+    {
+      "employer": "Deutsche Welle (DW)",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "verify",
+      "careers_url": "https://jobs.dw.com",
+      "notes": "German international broadcaster. Verify whether jobs.dw.com runs SmartRecruiters/SAP or bespoke."
+    },
+    {
+      "employer": "Euronews",
+      "adapter": "verify",
+      "enabled": false,
+      "confidence": "verify",
+      "careers_url": "https://www.euronews.com/about/jobs",
+      "notes": "Check for Teamtailor/SmartRecruiters (common for its size) — if so, flip to that adapter with the company token."
+    }
+  ]
+}

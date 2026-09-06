@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SIGNAL — Global Sports TV Jobs Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#EBEEF1;
+    --panel:#FFFFFF;
+    --ink:#14202B;
+    --ink-2:#2A3B48;
+    --muted:#5B6B77;
+    --faint:#8A99A4;
+    --hair:#D9E0E6;
+    --hair-2:#E7ECF0;
+    --signal:#0E7C86;      /* teal — interactive */
+    --signal-ink:#0A5A61;
+    --onair:#E5342B;       /* red — reserved for closing-soon / live tally */
+    --open:#1FA25A;        /* green — open, dated */
+    --watch:#B0863A;       /* amber — portal / monitor */
+    --chip:#F1F4F6;
+    --shadow:0 1px 0 rgba(20,32,43,.04), 0 8px 24px rgba(20,32,43,.06);
+    --r:10px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:15px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--signal-ink);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--ink);
+    color:#EDF1F4;
+    padding:18px clamp(16px,4vw,40px) 16px;
+    border-bottom:3px solid var(--onair);
+  }
+  .masthead-inner{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 28px;justify-content:space-between}
+  .brandblock{display:flex;align-items:center;gap:14px}
+  .tally{
+    width:14px;height:14px;border-radius:50%;background:var(--onair);
+    box-shadow:0 0 0 4px rgba(229,52,43,.18);
+    flex:none;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .wordmark{
+    font-family:"Barlow Semi Condensed",sans-serif;
+    font-weight:700;font-size:30px;letter-spacing:.02em;line-height:1;
+  }
+  .wordmark small{
+    display:block;font-family:"IBM Plex Mono",monospace;font-weight:400;
+    font-size:11px;letter-spacing:.18em;color:#9FB0BB;margin-top:5px;text-transform:uppercase;
+  }
+  .meta{display:flex;gap:26px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:#AEBEC8}
+  .meta .n{display:block;font-size:22px;color:#EDF1F4;font-weight:500;letter-spacing:-.01em}
+  .meta .n.onair{color:#FF7A72}
+
+  /* ---------- Controls ---------- */
+  .controls{
+    position:sticky;top:0;z-index:20;
+    background:rgba(235,238,241,.94);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--hair);
+    padding:12px clamp(16px,4vw,40px);
+  }
+  .controls-inner{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .search{
+    flex:1 1 260px;display:flex;align-items:center;gap:9px;
+    background:var(--panel);border:1px solid var(--hair);border-radius:var(--r);
+    padding:9px 13px;min-width:0;
+  }
+  .search svg{flex:none;color:var(--faint)}
+  .search input{border:0;outline:0;font:inherit;color:var(--ink);width:100%;background:transparent}
+  .filtergroup{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{
+    font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.01em;
+    padding:7px 12px;border-radius:99px;border:1px solid var(--hair);
+    background:var(--panel);color:var(--ink-2);cursor:pointer;transition:all .12s ease;white-space:nowrap;
+  }
+  .chip:hover{border-color:var(--signal)}
+  .chip[aria-pressed="true"]{background:var(--signal);border-color:var(--signal);color:#fff}
+  .chip .c{opacity:.6;font-family:"IBM Plex Mono",monospace;font-size:11px;margin-left:5px}
+  .filterlabel{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);align-self:center;margin-right:2px}
+
+  /* ---------- Board ---------- */
+  .wrap{max-width:1240px;margin:22px auto 60px;padding:0 clamp(16px,4vw,40px)}
+  .count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin:0 2px 12px}
+  .board{background:var(--panel);border:1px solid var(--hair);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+
+  .row{
+    display:grid;
+    grid-template-columns:8px 3.1fr 2fr 1.3fr 1.1fr 150px;
+    gap:16px;align-items:center;
+    padding:15px 20px 15px 14px;
+    border-top:1px solid var(--hair-2);cursor:pointer;transition:background .1s ease;
+  }
+  .row:first-of-type{border-top:0}
+  .row:hover{background:#F7F9FA}
+  .row.head{
+    cursor:default;background:#FBFCFD;border-top:0;padding-top:11px;padding-bottom:11px;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  }
+  .row.head:hover{background:#FBFCFD}
+  .dot{width:8px;height:8px;border-radius:50%;flex:none;justify-self:center}
+  .dot.open{background:var(--open)}
+  .dot.closing{background:var(--onair);box-shadow:0 0 0 3px rgba(229,52,43,.16)}
+  .dot.watch{background:var(--watch)}
+  .role{font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:17px;line-height:1.2;color:var(--ink)}
+  .role .sub{display:block;font-family:"Inter";font-weight:400;font-size:12.5px;color:var(--muted);margin-top:3px}
+  .emp{font-size:14px;color:var(--ink-2)}
+  .emp .site{display:block;font-size:12px;margin-top:2px}
+  .cell-loc{font-size:13.5px;color:var(--ink-2)}
+  .cell-loc .region{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin-top:3px}
+  .tag{
+    display:inline-block;font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:12px;
+    padding:3px 9px;border-radius:6px;letter-spacing:.02em;white-space:nowrap;
+  }
+  .tag.presenter{background:#E9F1EF;color:#0A5A61}
+  .tag.reporter{background:#EEF0F6;color:#3B4A86}
+  .tag.anchor{background:#F3EEF6;color:#6A3B86}
+  .tag.producer{background:#F6F0E9;color:#8A5A22}
+  .tag.mmj{background:#EAF2EC;color:#2A6E44}
+  .type{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+  .apply{
+    justify-self:end;font-family:"Barlow Semi Condensed",sans-serif;font-weight:600;font-size:13.5px;
+    padding:8px 14px;border-radius:8px;border:1px solid var(--signal);color:var(--signal-ink);background:#fff;
+    transition:all .12s ease;white-space:nowrap;
+  }
+  .apply:hover{background:var(--signal);color:#fff;text-decoration:none}
+  .apply.watch{border-color:var(--watch);color:var(--watch)}
+  .apply.watch:hover{background:var(--watch);color:#fff}
+  .chev{color:var(--faint);transition:transform .15s ease;justify-self:center}
+  .row.open-detail .chev{transform:rotate(90deg)}
+
+  /* ---------- Detail ---------- */
+  .detail{border-top:1px solid var(--hair-2);background:#FAFBFC;padding:0 20px;max-height:0;overflow:hidden;transition:max-height .22s ease}
+  .detail.show{max-height:600px}
+  .detail-inner{padding:18px 0 22px;display:grid;grid-template-columns:1.7fr 1fr;gap:28px}
+  .detail h4{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+  .detail p{margin:0 0 14px;color:var(--ink-2);font-size:14px}
+  .kv{display:grid;grid-template-columns:88px 1fr;gap:6px 12px;font-size:13.5px}
+  .kv dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding-top:2px}
+  .kv dd{margin:0;color:var(--ink-2)}
+  .kv dd.empty{color:var(--faint);font-style:italic}
+  .srcline{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--faint);margin-top:6px}
+
+  /* ---------- Footer ---------- */
+  .foot{max-width:1240px;margin:0 auto;padding:26px clamp(16px,4vw,40px) 60px;color:var(--muted);font-size:13px}
+  .foot h3{font-family:"Barlow Semi Condensed",sans-serif;font-size:16px;color:var(--ink);margin:0 0 8px;letter-spacing:.01em}
+  .foot code{font-family:"IBM Plex Mono",monospace;font-size:12px;background:#fff;border:1px solid var(--hair);padding:1px 5px;border-radius:4px}
+  .foot a{font-weight:500}
+  .sources{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .sources a{background:#fff;border:1px solid var(--hair);padding:5px 11px;border-radius:99px;font-size:12.5px}
+
+  .empty-state{padding:60px 20px;text-align:center;color:var(--muted)}
+  .empty-state strong{display:block;font-family:"Barlow Semi Condensed",sans-serif;font-size:20px;color:var(--ink);margin-bottom:6px;font-weight:600}
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:860px){
+    .row.head{display:none}
+    .row{grid-template-columns:8px 1fr auto;grid-template-areas:"dot role apply" "dot emp emp" "dot meta meta";row-gap:8px;padding:16px 16px 16px 12px}
+    .dot{grid-area:dot;align-self:start;margin-top:6px}
+    .role{grid-area:role}
+    .emp{grid-area:emp}
+    .cell-loc,.cell-cat,.type{grid-area:meta;display:inline}
+    .cell-cat{margin-right:8px}
+    .cell-loc{margin-right:10px}
+    .cell-loc .region{display:inline;margin-left:6px}
+    .apply{grid-area:apply;align-self:start}
+    .chev{display:none}
+    .detail-inner{grid-template-columns:1fr;gap:18px}
+    .meta{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brandblock">
+        <span class="tally" aria-hidden="true"></span>
+        <span class="wordmark">SIGNAL<small>Global Sports TV Jobs · On-air &amp; Production</small></span>
+      </div>
+      <div class="meta">
+        <div><span class="n" id="stat-total">—</span>live listings</div>
+        <div><span class="n onair" id="stat-closing">—</span>closing soon</div>
+        <div><span class="n" id="stat-updated" style="font-size:13px;letter-spacing:.04em">—</span>last updated</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="controls-inner">
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search role, broadcaster, city, requirement…" autocomplete="off" />
+      </label>
+      <div class="filtergroup" id="cat-filters"><span class="filterlabel">Role</span></div>
+      <div class="filtergroup" id="region-filters"><span class="filterlabel">Region</span></div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <p class="count" id="count"></p>
+    <section class="board" id="board" aria-live="polite"></section>
+  </main>
+
+  <footer class="foot">
+    <h3>How this board is kept current</h3>
+    <p>This is a shared, filterable snapshot of English-language sports-TV roles worldwide — presenters, reporters, anchors, MMJs and producers. It is <strong>not exhaustive</strong>: on-air seats at national networks are frequently filled by direct appointment and never advertised. Contact names, phone numbers and emails are shown where the advert provides them — for most TV roles it does not, and applications route through the broadcaster's own system via the <em>Apply</em> link.</p>
+    <p style="margin-top:10px">To make the board update itself, the data lives in <code>jobs.json</code> and this page renders it. A scheduled job (e.g. a daily GitHub Action) refreshes that file from sources that expose it cleanly — broadcaster career APIs (Greenhouse, Lever, Workday) and RSS — then redeploys. See <code>SPEC.md</code> for the build.</p>
+    <div class="sources">
+      <a href="https://www.entertainmentcareers.net/jobs/s/sports-on-air-talent/" target="_blank" rel="noopener">EntertainmentCareers · On-Air</a>
+      <a href="https://www.totaljobs.com/jobs/sports-journalism" target="_blank" rel="noopener">Totaljobs · UK</a>
+      <a href="https://hub.globalsportsjobs.com/company/dazn" target="_blank" rel="noopener">GlobalSportsJobs</a>
+      <a href="https://www.showbizjobs.com/" target="_blank" rel="noopener">ShowbizJobs</a>
+      <a href="https://staatalent.com/phpBB/viewforum.php?f=3" target="_blank" rel="noopener">STAA · Sportscasting</a>
+      <a href="https://careers.dazn.com/" target="_blank" rel="noopener">DAZN Careers</a>
+      <a href="https://www.gulftalent.com/companies/bein-media-group-careers" target="_blank" rel="noopener">beIN · GulfTalent</a>
+    </div>
+  </footer>
+
+<script id="embedded-jobs" type="application/json">
+{
+  "updated": "2026-08-19",
+  "jobs": [
+    {
+      "id": "sky-studio-reporter",
+      "role": "Studio Reporter (×2)",
+      "sub": "Live studio analysis, breaking news, data-driven storytelling",
+      "employer": "Sky Sports News",
+      "site": "https://careers.sky.com",
+      "location": "Isleworth, London",
+      "region": "UK & Europe",
+      "type": "Full-time",
+      "category": "Reporter",
+      "status": "open",
+      "requirements": "Thrives under the pressure of live television; brings big stories and moments to a national audience through live studio analysis, breaking-news coverage and data-led storytelling. Strong on-camera presence and editorial judgement.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.totaljobs.com/jobs/sports-journalism",
+      "source": "Totaljobs / Sky careers",
+      "posted": "Aug 2026",
+      "closes": ""
+    },
+    {
+      "id": "sky-ssn-producer",
+      "role": "Producer — Morning Output",
+      "sub": "Sky Sports News morning show; 'win in video' priority",
+      "employer": "Sky Sports News",
+      "site": "https://careers.sky.com",
+      "location": "Isleworth, London",
+      "region": "UK & Europe",
+      "type": "Full-time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Highly motivated producer driving varied, vibrant morning output. Central to the channel's editorial commitment to video, keeping sports-news content world-class across broadcast and digital.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.totaljobs.com/jobs/sports-journalism",
+      "source": "Totaljobs / Sky careers",
+      "posted": "Aug 2026",
+      "closes": ""
+    },
+    {
+      "id": "sky-mobile-reporter",
+      "role": "News Reporter — Mobile Team",
+      "sub": "Writing and breaking news to large digital audiences",
+      "employer": "Sky Sports",
+      "site": "https://careers.sky.com",
+      "location": "Isleworth, London",
+      "region": "UK & Europe",
+      "type": "Full-time",
+      "category": "Reporter",
+      "status": "open",
+      "requirements": "Writes and breaks news to large digital audiences on major UK and world stories. Eye for a top line, strong writing and high journalistic standards.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.totaljobs.com/jobs/sports-journalism",
+      "source": "Totaljobs / Sky careers",
+      "posted": "Aug 2026",
+      "closes": ""
+    },
+    {
+      "id": "hearst-sac-anchor",
+      "role": "Sports Anchor / Reporter",
+      "sub": "Studio anchoring plus field-breaking exclusives",
+      "employer": "Hearst Television (KCRA / KQCA)",
+      "site": "https://www.hearst.com/broadcasting",
+      "location": "Sacramento, CA",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Anchor",
+      "status": "open",
+      "requirements": "Brings the energy of live reporting into the studio; an anchor who also heads into the field to break big stories. Enterprises exclusives, delivers dynamic live shots, writes and edits scripts with viewer interaction in mind. Versatile and efficient.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/hearst-television/sports-anchor-reporter/job/514205/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "Aug 2026",
+      "closes": ""
+    },
+    {
+      "id": "cbs-detroit-reporter",
+      "role": "Sports Reporter (Freelance)",
+      "sub": "Field storytelling, in-studio anchoring, enterprise content",
+      "employer": "CBS Detroit (Paramount)",
+      "site": "https://www.paramount.com/careers",
+      "location": "Southfield, MI",
+      "region": "United States",
+      "type": "Freelance",
+      "category": "Reporter",
+      "status": "open",
+      "requirements": "Versatile sports-journalism professional with strong visual storytelling, photography and editing skills, producing compelling daily content from the field. Equally comfortable anchoring in-studio, reporting remotely and creating enterprise content.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/cbs/sports-reporter/job/520949/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "Jul 27, 2026",
+      "closes": ""
+    },
+    {
+      "id": "cbs-miami-mmj",
+      "role": "Sports Multi-Skilled Photographer / MMJ",
+      "sub": "Shooting, editing, MMJ reporting, fill-in anchoring",
+      "employer": "CBS Miami (Paramount)",
+      "site": "https://www.paramount.com/careers",
+      "location": "Miami, FL",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "MMJ",
+      "status": "open",
+      "requirements": "Experienced sports MMJ: shooting and editing sports stories, MMJ reporting, producing and fill-in anchoring across broadcast and digital.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/jobs/s/sports-anchor-reporter/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "Jun 2026",
+      "closes": ""
+    },
+    {
+      "id": "abc30-fresno-anchor",
+      "role": "Sports Anchor / Reporter",
+      "sub": "Multi-platform sports coverage, Central California",
+      "employer": "KFSN / ABC30 (Disney)",
+      "site": "https://abc30.com",
+      "location": "Fresno, CA",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Anchor",
+      "status": "open",
+      "requirements": "Delivers top-rated sports coverage across television, digital, social and streaming for the ABC Owned Station in Central California.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.ziprecruiter.com/Jobs/Sports-Reporter",
+      "source": "ZipRecruiter / ABC30",
+      "posted": "2026",
+      "closes": ""
+    },
+    {
+      "id": "wway-anchor",
+      "role": "Sports Reporter / Anchor",
+      "sub": "Coastal Carolina market — live and packaged",
+      "employer": "WWAY NewsChannel 3",
+      "site": "https://www.wwaytv3.com",
+      "location": "Wilmington, NC",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Anchor",
+      "status": "open",
+      "requirements": "Passion for sports and storytelling; live and packaged reporting for the coastal Carolina market. On-camera anchoring plus field reporting.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.ziprecruiter.com/Jobs/Sports-Reporter",
+      "source": "ZipRecruiter / WWAY",
+      "posted": "2026",
+      "closes": ""
+    },
+    {
+      "id": "wdio-duluth-anchor",
+      "role": "Sports Anchor / Reporter",
+      "sub": "Anchor & produce sportscasts; report live and on tape",
+      "employer": "WDIO-TV (ABC)",
+      "site": "https://www.wdio.com",
+      "location": "Duluth, MN",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Anchor",
+      "status": "open",
+      "requirements": "Selects, researches, writes and gathers sportscast content; anchors and produces sportscasts; shoots, edits, writes and posts daily content for on-air and web; reports live and on tape; develops broad local sports sources.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.careerbuilder.com/job-details/sports-anchor-reporter-duluth-mn--6207bd91-02ed-4468-b972-58ffb0c2b939",
+      "source": "CareerBuilder / WDIO",
+      "posted": "2026",
+      "closes": ""
+    },
+    {
+      "id": "wcco-producer",
+      "role": "News Producer",
+      "sub": "Manages anchors, reporters, photographers; crafts TV & digital",
+      "employer": "WCCO / CBS Minnesota (Paramount)",
+      "site": "https://www.paramount.com/careers",
+      "location": "Minneapolis, MN",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Manages a team of anchors, reporters, photographers, editors and other journalists; crafts strong TV and collaborates on daily digital content; strong news judgement under deadline.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/paramount/news-producer/job/525913/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "Aug 2026",
+      "closes": ""
+    },
+    {
+      "id": "nbcu-line-producer",
+      "role": "Line Producer",
+      "sub": "Live/recorded sports & news production",
+      "employer": "NBCUniversal",
+      "site": "https://www.nbcunicareers.com",
+      "location": "United States",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Line-produces live and recorded output; rundown build, timing and gallery communication across NBCUniversal platforms.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/jobs/s/sports-on-air-talent/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "2026",
+      "closes": ""
+    },
+    {
+      "id": "audacy-producer",
+      "role": "Executive Producer / Producer (Pipeline)",
+      "sub": "Programming — East / West Coast opportunities",
+      "employer": "Audacy",
+      "site": "https://www.audacy.com/careers",
+      "location": "Multiple, US",
+      "region": "United States",
+      "type": "Full-time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Creative engine behind the broadcast — breaking news and live programming; reports to Brand Manager. On-site, multiple potential opportunities.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.entertainmentcareers.net/jobs/s/sports-on-air-talent/",
+      "source": "EntertainmentCareers.Net",
+      "posted": "Apr 2026",
+      "closes": ""
+    },
+    {
+      "id": "cnbc-india-anchor",
+      "role": "Reporter / Anchor — India",
+      "sub": "Lead India TV reporter/anchor (Singapore-based)",
+      "employer": "CNBC (NBCUniversal)",
+      "site": "https://www.nbcunicareers.com",
+      "location": "Singapore",
+      "region": "Asia-Pacific",
+      "type": "Full-time",
+      "category": "Anchor",
+      "status": "open",
+      "requirements": "Lead India television reporter/anchor: news-gathers and develops stories for on-air and digital, reports from the field, writes clean copy and digital articles, conducts live hits, develops sources, and contributes to show planning. Business-news focus.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.showbizjobs.com/jobs/cnbc-reporter-anchor-india-in-singapore/jid-mk631v",
+      "source": "ShowbizJobs / CNBC",
+      "posted": "2026",
+      "closes": ""
+    },
+    {
+      "id": "bein-anchor-watch",
+      "role": "Presenter / Anchor — monitor",
+      "sub": "Premier League anchor seats opening (Keys & Gray departing)",
+      "employer": "beIN Sports",
+      "site": "https://www.gulftalent.com/companies/bein-media-group-careers",
+      "location": "Doha, Qatar",
+      "region": "Middle East",
+      "type": "Full-time",
+      "category": "Presenter",
+      "status": "watch",
+      "requirements": "No specific advert live at time of check. beIN's two long-standing Premier League anchors depart at the end of the 2025-26 season, which historically triggers on-air recruitment. Watch the GulfTalent portal and beIN careers.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.gulftalent.com/companies/bein-media-group-careers",
+      "source": "GulfTalent (portal watch)",
+      "posted": "",
+      "closes": ""
+    },
+    {
+      "id": "dazn-watch",
+      "role": "On-air & Production — register interest",
+      "sub": "Talent hired in waves around rights launches",
+      "employer": "DAZN",
+      "site": "https://careers.dazn.com",
+      "location": "London / Global",
+      "region": "Global",
+      "type": "Various",
+      "category": "Producer",
+      "status": "watch",
+      "requirements": "No specific presenter advert live at time of check. DAZN lists broadcast and production roles through its careers portal and recruits on-air talent around rights launches — register interest for a suitable role.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://careers.dazn.com/",
+      "source": "DAZN careers (portal watch)",
+      "posted": "",
+      "closes": ""
+    },
+    {
+      "id": "supersport-watch",
+      "role": "Sports Presenter — monitor",
+      "sub": "Main English-language sports broadcaster in Africa",
+      "employer": "SuperSport (MultiChoice)",
+      "site": "https://www.multichoice.com/careers",
+      "location": "Johannesburg, South Africa",
+      "region": "Africa",
+      "type": "Full-time",
+      "category": "Presenter",
+      "status": "watch",
+      "requirements": "Recruits presenters directly rather than through aggregators. Watch the MultiChoice careers site and Premier League Productions / IMG for studio-anchor work.",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://www.multichoice.com/careers",
+      "source": "MultiChoice careers (portal watch)",
+      "posted": "",
+      "closes": ""
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var CATS = ["Presenter","Reporter","Anchor","MMJ","Producer"];
+  var REGIONS = ["UK & Europe","United States","Middle East","Asia-Pacific","Africa","Global"];
+  var state = { q:"", cats:new Set(), regions:new Set() };
+  var DATA = { updated:"", jobs:[] };
+
+  function loadData(){
+    // Hosted/auto-updated mode: prefer an external jobs.json refreshed by a scheduled job.
+    return fetch("jobs.json", {cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw new Error("no file"); return r.json(); })
+      .catch(function(){
+        // Standalone mode: fall back to the data embedded in this page.
+        return JSON.parse(document.getElementById("embedded-jobs").textContent);
+      });
+  }
+
+  function catClass(c){ return (c||"").toLowerCase().replace(/[^a-z]/g,""); }
+  function esc(s){ return (s||"").replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];}); }
+  function host(u){ try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return u; } }
+
+  function buildFilters(){
+    var cf = document.getElementById("cat-filters");
+    CATS.forEach(function(c){
+      var b = document.createElement("button");
+      b.className="chip"; b.setAttribute("aria-pressed","false"); b.dataset.cat=c;
+      b.innerHTML = c + '<span class="c" data-c></span>';
+      b.addEventListener("click", function(){ toggle(state.cats, c, b); render(); });
+      cf.appendChild(b);
+    });
+    var rf = document.getElementById("region-filters");
+    REGIONS.forEach(function(r){
+      var b = document.createElement("button");
+      b.className="chip"; b.setAttribute("aria-pressed","false"); b.dataset.region=r;
+      b.textContent = r;
+      b.addEventListener("click", function(){ toggle(state.regions, r, b); render(); });
+      rf.appendChild(b);
+    });
+  }
+  function toggle(set, val, btn){
+    if(set.has(val)){ set.delete(val); btn.setAttribute("aria-pressed","false"); }
+    else { set.add(val); btn.setAttribute("aria-pressed","true"); }
+  }
+
+  function match(job){
+    if(state.cats.size && !state.cats.has(job.category)) return false;
+    if(state.regions.size && !state.regions.has(job.region)) return false;
+    if(state.q){
+      var hay = [job.role,job.sub,job.employer,job.location,job.region,job.type,job.category,job.requirements,job.contact_name].join(" ").toLowerCase();
+      if(hay.indexOf(state.q.toLowerCase())===-1) return false;
+    }
+    return true;
+  }
+
+  function statusDot(s){ return s==="closing"?"closing":(s==="watch"?"watch":"open"); }
+
+  function rowHTML(j){
+    var d = statusDot(j.status);
+    var applyLabel = j.status==="watch" ? "Watch" : "View advert";
+    var applyClass = j.status==="watch" ? "apply watch" : "apply";
+    var contactCount = [j.contact_name,j.contact_email,j.contact_phone].filter(Boolean).length;
+    return '<div class="row" data-id="'+j.id+'" role="button" tabindex="0" aria-expanded="false">'
+      + '<span class="dot '+d+'" title="'+(j.status==="watch"?"Portal watch":j.status==="closing"?"Closing soon":"Open")+'"></span>'
+      + '<div class="role">'+esc(j.role)+'<span class="sub">'+esc(j.sub||"")+'</span></div>'
+      + '<div class="emp">'+esc(j.employer)+'<a class="site" href="'+esc(j.site)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+esc(host(j.site))+' &#8599;</a></div>'
+      + '<div class="cell-loc">'+esc(j.location)+'<span class="region">'+esc(j.region)+'</span></div>'
+      + '<div class="cell-cat"><span class="tag '+catClass(j.category)+'">'+esc(j.category)+'</span><div class="type">'+esc(j.type)+'</div></div>'
+      + '<a class="'+applyClass+'" href="'+esc(j.ad_url)+'" target="_blank" rel="noopener" onclick="event.stopPropagation()">'+applyLabel+'</a>'
+      + '</div>'
+      + '<div class="detail" data-detail="'+j.id+'"><div class="detail-inner">'
+      +   '<div><h4>Requirements</h4><p>'+esc(j.requirements)+'</p><div class="srcline">Source: '+esc(j.source)+(j.posted?" · posted "+esc(j.posted):"")+(j.closes?" · closes "+esc(j.closes):"")+'</div></div>'
+      +   '<div><h4>Contacts &amp; links ('+contactCount+' direct)</h4><dl class="kv">'
+      +     '<dt>Contact</dt><dd class="'+(j.contact_name?"":"empty")+'">'+(j.contact_name?esc(j.contact_name):"not listed")+'</dd>'
+      +     '<dt>Email</dt><dd class="'+(j.contact_email?"":"empty")+'">'+(j.contact_email?'<a href="mailto:'+esc(j.contact_email)+'">'+esc(j.contact_email)+'</a>':"not listed")+'</dd>'
+      +     '<dt>Phone</dt><dd class="'+(j.contact_phone?"":"empty")+'">'+(j.contact_phone?'<a href="tel:'+esc(j.contact_phone)+'">'+esc(j.contact_phone)+'</a>':"not listed")+'</dd>'
+      +     '<dt>Advert</dt><dd><a href="'+esc(j.ad_url)+'" target="_blank" rel="noopener">Open listing &#8599;</a></dd>'
+      +     '<dt>Broadcaster</dt><dd><a href="'+esc(j.site)+'" target="_blank" rel="noopener">'+esc(host(j.site))+' &#8599;</a></dd>'
+      +   '</dl></div>'
+      + '</div></div>';
+  }
+
+  function render(){
+    var board = document.getElementById("board");
+    var list = DATA.jobs.filter(match);
+    // header row
+    var head = '<div class="row head"><span></span><span>Role</span><span>Broadcaster</span><span>Location</span><span>Category</span><span style="text-align:right">Action</span></div>';
+    if(!list.length){
+      board.innerHTML = head + '<div class="empty-state"><strong>No matching roles</strong>Clear a filter or widen your search.</div>';
+    } else {
+      board.innerHTML = head + list.map(rowHTML).join("");
+    }
+    document.getElementById("count").textContent =
+      list.length + " of " + DATA.jobs.length + " listings shown";
+    wireRows();
+  }
+
+  function wireRows(){
+    document.querySelectorAll(".row[data-id]").forEach(function(row){
+      function open(){
+        var id = row.dataset.id;
+        var det = document.querySelector('[data-detail="'+id+'"]');
+        var isOpen = det.classList.contains("show");
+        det.classList.toggle("show", !isOpen);
+        row.classList.toggle("open-detail", !isOpen);
+        row.setAttribute("aria-expanded", String(!isOpen));
+      }
+      row.addEventListener("click", open);
+      row.addEventListener("keydown", function(e){
+        if(e.key==="Enter"||e.key===" "){ e.preventDefault(); open(); }
+      });
+    });
+  }
+
+  function stats(){
+    document.getElementById("stat-total").textContent = DATA.jobs.filter(function(j){return j.status!=="watch";}).length;
+    document.getElementById("stat-closing").textContent = DATA.jobs.filter(function(j){return j.status==="closing";}).length;
+    document.getElementById("stat-updated").textContent = DATA.updated || "—";
+  }
+  function counts(){
+    CATS.forEach(function(c){
+      var n = DATA.jobs.filter(function(j){return j.category===c;}).length;
+      var el = document.querySelector('[data-cat="'+c+'"] [data-c]');
+      if(el) el.textContent = n;
+    });
+  }
+
+  document.getElementById("q").addEventListener("input", function(e){ state.q=e.target.value; render(); });
+
+  buildFilters();
+  loadData().then(function(d){
+    DATA = d && d.jobs ? d : {updated:"", jobs:[]};
+    stats(); counts(); render();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "signal-jobs-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Auto-updating board of global sports-TV jobs (on-air & production).",
+  "scripts": {
+    "collect": "node collector/run.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
