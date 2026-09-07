@@ -1,6 +1,26 @@
 {
-  "updated": "2026-09-06",
+  "updated": "2026-09-07",
   "jobs": [
+    {
+      "id": "reuters-multimedia-news-producer-india-bengaluru-karnataka",
+      "role": "Multimedia News Producer",
+      "sub": "",
+      "employer": "Reuters",
+      "site": "https://www.reuters.com",
+      "location": "India, Bengaluru, Karnataka",
+      "region": "Asia-Pacific",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "closing",
+      "requirements": "Multimedia News Producer: Are you passionate about breaking news and excited by the opportunity to reach millions of readers around the world in real time? The Digital Production Desk at Reuters in Bangalore is looking for a Multimedia News Producer to help curate, package and deliver the most important news to Reuters.com and media clients. Working at the heart of Reuters' global news operation, you will play a key role in bringing together text, video, photos and graphics to create compelling digital experiences for audiences worldwide. About the Role In this opportunity as a Multimedia…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/India-Bengaluru-Karnataka/Multimedia-News-Producer_JREQ203038",
+      "source": "Reuters · Workday",
+      "posted": "2026-08-19",
+      "closes": "2026-09-14"
+    },
     {
       "id": "reuters-associate-picture-editor-spain-barcelona",
       "role": "Associate Picture Editor",
@@ -40,26 +60,6 @@
       "source": "Reuters · Workday",
       "posted": "2026-08-26",
       "closes": "2026-10-03"
-    },
-    {
-      "id": "reuters-multimedia-news-producer-india-bengaluru-karnataka",
-      "role": "Multimedia News Producer",
-      "sub": "",
-      "employer": "Reuters",
-      "site": "https://www.reuters.com",
-      "location": "India, Bengaluru, Karnataka",
-      "region": "Asia-Pacific",
-      "type": "Full time",
-      "category": "Producer",
-      "status": "open",
-      "requirements": "Multimedia News Producer: Are you passionate about breaking news and excited by the opportunity to reach millions of readers around the world in real time? The Digital Production Desk at Reuters in Bangalore is looking for a Multimedia News Producer to help curate, package and deliver the most important news to Reuters.com and media clients. Working at the heart of Reuters' global news operation, you will play a key role in bringing together text, video, photos and graphics to create compelling digital experiences for audiences worldwide. About the Role In this opportunity as a Multimedia…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/India-Bengaluru-Karnataka/Multimedia-News-Producer_JREQ203038",
-      "source": "Reuters · Workday",
-      "posted": "2026-08-19",
-      "closes": "2026-09-14"
     },
     {
       "id": "aljazeera-watch",
