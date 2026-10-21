@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "jobs": [
     {
       "id": "cnn-wbd-producer-sports-fixed-term-1-year-sao-paulo-454-rua-ministro-jesuino-card",
@@ -22,6 +22,26 @@
       "closes": "2026-10-23"
     },
     {
+      "id": "reuters-associate-picture-editor-global-pictures-desk-fixed-term-poland-gdansk",
+      "role": "Associate Picture Editor, Global Pictures Desk (fixed-term)",
+      "sub": "",
+      "employer": "Reuters",
+      "site": "https://www.reuters.com",
+      "location": "Poland, Gdansk",
+      "region": "UK & Europe",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "closing",
+      "requirements": "Job Description Reuters is looking for an enthusiastic journalist with advanced English and a sharp eye for detail who can effortlessly sift through the thousands of photos our photographers shoot every day. You will join our global team editing the news pictures service, which is mainly based at our centre in Gdańsk, Poland. In your role you will contribute to the daily picture file. Our Global Pictures Desk team ensures the quality, accuracy and speed of delivery of news pictures to our clients worldwide. We have a dynamic newsroom including video, text, and graphics journalists which…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/Poland-Gdansk/Associate-Picture-Editor--Global-Pictures-Desk--fixed-term-_JREQ204363-1",
+      "source": "Reuters · Workday",
+      "posted": "2026-10-13",
+      "closes": "2026-10-28"
+    },
+    {
       "id": "cnn-wbd-producer-cnn-vod-streaming-ny-new-york-30-hudson-yards",
       "role": "Producer, CNN VOD Streaming",
       "sub": "",
@@ -38,7 +58,7 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Producer--CNN-VOD-Streaming_R000105829-1",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -58,7 +78,27 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Editorial-Producer--The-Source-with-Kaitlan-Collins_R000107896",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
+      "closes": ""
+    },
+    {
+      "id": "cnn-wbd-associate-archival-producer-temporary-ny-new-york-30-hudson-yards",
+      "role": "Associate Archival Producer (Temporary)",
+      "sub": "",
+      "employer": "CNN / WBD",
+      "site": "https://edition.cnn.com",
+      "location": "NY New York 30 Hudson Yards",
+      "region": "United States",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Associate-Archival-Producer--Temporary-_R000109107",
+      "source": "CNN / WBD · Workday",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -98,7 +138,7 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/DC-Washington-820-1st-Street-NE/Political-Desk-Editor--Political-Unit_R000107500",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -118,7 +158,7 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Producer--CNN-Visual-Investigations_R000106993-1",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -162,6 +202,26 @@
       "closes": "2026-11-10"
     },
     {
+      "id": "cnn-wbd-producer-digital-features-london-160-old-street",
+      "role": "Producer, Digital Features",
+      "sub": "",
+      "employer": "CNN / WBD",
+      "site": "https://edition.cnn.com",
+      "location": "London, 160 Old Street",
+      "region": "UK & Europe",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/London-160-Old-Street/Producer_R000107064",
+      "source": "CNN / WBD · Workday",
+      "posted": "2026-10-16",
+      "closes": ""
+    },
+    {
       "id": "cnn-wbd-chief-publicity-producer-anime-production-tokyo-toranomon-hills-station-tower",
       "role": "Chief, Publicity Producer, Anime Production",
       "sub": "",
@@ -202,26 +262,6 @@
       "closes": ""
     },
     {
-      "id": "cnn-wbd-producer-digital-features-london-160-old-street",
-      "role": "Producer, Digital Features",
-      "sub": "",
-      "employer": "CNN / WBD",
-      "site": "https://edition.cnn.com",
-      "location": "London, 160 Old Street",
-      "region": "UK & Europe",
-      "type": "Full time",
-      "category": "Producer",
-      "status": "open",
-      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/London-160-Old-Street/Producer_R000107064",
-      "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
-      "closes": ""
-    },
-    {
       "id": "cnn-wbd-producer-cnn-en-espa-ol-fl-miami-6505-blue-lagoon-dri",
       "role": "Producer, CNN en Español",
       "sub": "",
@@ -238,7 +278,7 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/FL-Miami-6505-Blue-Lagoon-Dri/Producer--CNN-en-Espaol_R000104977",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -258,27 +298,7 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/DC-Washington-820-1st-Street-NE/News-Desk-Producer--CNN_R000107699",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
-      "closes": ""
-    },
-    {
-      "id": "cnn-wbd-associate-archival-producer-temporary-ny-new-york-30-hudson-yards",
-      "role": "Associate Archival Producer (Temporary)",
-      "sub": "",
-      "employer": "CNN / WBD",
-      "site": "https://edition.cnn.com",
-      "location": "NY New York 30 Hudson Yards",
-      "region": "United States",
-      "type": "Full time",
-      "category": "Producer",
-      "status": "open",
-      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Associate-Archival-Producer--Temporary-_R000109107",
-      "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
@@ -298,28 +318,8 @@
       "contact_phone": "",
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/DC-Washington-820-1st-Street-NE/Associate-Producer--CNN-VOD-Streaming_R000105826",
       "source": "CNN / WBD · Workday",
-      "posted": "2026-10-16",
+      "posted": "2026-10-21",
       "closes": ""
-    },
-    {
-      "id": "reuters-associate-picture-editor-global-pictures-desk-fixed-term-poland-gdansk",
-      "role": "Associate Picture Editor, Global Pictures Desk (fixed-term)",
-      "sub": "",
-      "employer": "Reuters",
-      "site": "https://www.reuters.com",
-      "location": "Poland, Gdansk",
-      "region": "UK & Europe",
-      "type": "Full time",
-      "category": "Producer",
-      "status": "open",
-      "requirements": "Job Description Reuters is looking for an enthusiastic journalist with advanced English and a sharp eye for detail who can effortlessly sift through the thousands of photos our photographers shoot every day. You will join our global team editing the news pictures service, which is mainly based at our centre in Gdańsk, Poland. In your role you will contribute to the daily picture file. Our Global Pictures Desk team ensures the quality, accuracy and speed of delivery of news pictures to our clients worldwide. We have a dynamic newsroom including video, text, and graphics journalists which…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/Poland-Gdansk/Associate-Picture-Editor--Global-Pictures-Desk--fixed-term-_JREQ204363-1",
-      "source": "Reuters · Workday",
-      "posted": "2026-10-13",
-      "closes": "2026-10-28"
     },
     {
       "id": "aljazeera-watch",
