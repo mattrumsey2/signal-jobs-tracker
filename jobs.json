@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "jobs": [
     {
       "id": "cnn-wbd-producer-cnn-vod-streaming-ny-new-york-30-hudson-yards",
@@ -240,6 +240,46 @@
       "source": "CNN / WBD · Workday",
       "posted": "2026-10-21",
       "closes": ""
+    },
+    {
+      "id": "reuters-multimedia-news-producer-india-bengaluru-karnataka",
+      "role": "Multimedia News Producer",
+      "sub": "",
+      "employer": "Reuters",
+      "site": "https://www.reuters.com",
+      "location": "India, Bengaluru, Karnataka",
+      "region": "Asia-Pacific",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Job Description Are you passionate about breaking news and excited by the opportunity to reach millions of readers around the world in real time? The Digital Production Desk at Reuters in Bangalore is looking for a Multimedia News Producer to help curate, package and deliver the most important news to Reuters.com and media clients. Working at the heart of Reuters' global news operation, you will play a key role in bringing together text, video, photos and graphics to create compelling digital experiences for audiences worldwide. In this opportunity as a Multimedia News Producer , you will be…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/India-Bengaluru-Karnataka/Multimedia-News-Producer_JREQ204031",
+      "source": "Reuters · Workday",
+      "posted": "2026-10-30",
+      "closes": "2026-11-16"
+    },
+    {
+      "id": "reuters-associate-picture-editor-global-pictures-desk-fixed-term-poland-gdansk",
+      "role": "Associate Picture Editor, Global Pictures Desk (fixed-term)",
+      "sub": "",
+      "employer": "Reuters",
+      "site": "https://www.reuters.com",
+      "location": "Poland, Gdansk",
+      "region": "UK & Europe",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Job Description Reuters is looking for an enthusiastic journalist with advanced English and a sharp eye for detail who can effortlessly sift through the thousands of photos our photographers shoot every day. You will join our global team editing the news pictures service, which is mainly based at our centre in Gdańsk, Poland. In your role you will contribute to the daily picture file. Our Global Pictures Desk team ensures the quality, accuracy and speed of delivery of news pictures to our clients worldwide. We have a dynamic newsroom including video, text, and graphics journalists which…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://thomsonreuters.wd5.myworkdayjobs.com/External_Career_Site/job/Poland-Gdansk/Associate-Picture-Editor--Global-Pictures-Desk--fixed-term-_JREQ204363-1",
+      "source": "Reuters · Workday",
+      "posted": "2026-10-29",
+      "closes": "2026-11-15"
     },
     {
       "id": "aljazeera-watch",
