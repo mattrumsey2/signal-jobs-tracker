@@ -1,26 +1,6 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "jobs": [
-    {
-      "id": "cnn-wbd-admissions-host-leavesden-south-way",
-      "role": "Admissions Host",
-      "sub": "",
-      "employer": "CNN / WBD",
-      "site": "https://edition.cnn.com",
-      "location": "Leavesden South Way",
-      "region": "Global",
-      "type": "Full time",
-      "category": "Presenter",
-      "status": "closing",
-      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/Leavesden-South-Way/Admissions-Host_R000109647",
-      "source": "CNN / WBD · Workday",
-      "posted": "2026-10-20",
-      "closes": "2026-11-10"
-    },
     {
       "id": "reuters-multimedia-news-producer-india-bengaluru-karnataka",
       "role": "Multimedia News Producer",
@@ -79,6 +59,26 @@
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Producer--CNN-VOD-Streaming_R000105829-1",
       "source": "CNN / WBD · Workday",
       "posted": "2026-10-21",
+      "closes": ""
+    },
+    {
+      "id": "cnn-wbd-producer-cnn-video-editorial-dc-washington-820-1st-street-ne",
+      "role": "Producer, CNN Video Editorial",
+      "sub": "",
+      "employer": "CNN / WBD",
+      "site": "https://edition.cnn.com",
+      "location": "DC Washington 820 1st Street NE",
+      "region": "United States",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/DC-Washington-820-1st-Street-NE/Producer--CNN-Video-Editorial_R000107510",
+      "source": "CNN / WBD · Workday",
+      "posted": "2026-11-10",
       "closes": ""
     },
     {
