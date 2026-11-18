@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "jobs": [
     {
       "id": "cnn-wbd-producer-cnn-vod-streaming-ny-new-york-30-hudson-yards",
@@ -82,26 +82,6 @@
       "closes": ""
     },
     {
-      "id": "cnn-wbd-producer-cnn-visual-investigations-ny-new-york-30-hudson-yards",
-      "role": "Producer, CNN Visual Investigations",
-      "sub": "",
-      "employer": "CNN / WBD",
-      "site": "https://edition.cnn.com",
-      "location": "NY New York 30 Hudson Yards",
-      "region": "United States",
-      "type": "Full time",
-      "category": "Producer",
-      "status": "open",
-      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
-      "contact_name": "",
-      "contact_email": "",
-      "contact_phone": "",
-      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Producer--CNN-Visual-Investigations_R000106993-1",
-      "source": "CNN / WBD · Workday",
-      "posted": "2026-10-21",
-      "closes": ""
-    },
-    {
       "id": "cnn-wbd-senior-reporter-editor-us-hong-kong-41-heung-yip-road",
       "role": "Senior Reporter/Editor, US",
       "sub": "",
@@ -119,6 +99,26 @@
       "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/Hong-Kong-41-Heung-Yip-Road/Senior-Editor_R000107475",
       "source": "CNN / WBD · Workday",
       "posted": "2026-10-20",
+      "closes": ""
+    },
+    {
+      "id": "cnn-wbd-producer-cnn-visual-investigations-ny-new-york-30-hudson-yards",
+      "role": "Producer, CNN Visual Investigations",
+      "sub": "",
+      "employer": "CNN / WBD",
+      "site": "https://edition.cnn.com",
+      "location": "NY New York 30 Hudson Yards",
+      "region": "United States",
+      "type": "Full time",
+      "category": "Producer",
+      "status": "open",
+      "requirements": "Storytelling is, and will always be, the heart of what we do at Skydance. Our vision is to build a thriving entertainment ecosystem where stories and worlds are imagined, brought to life and experienced. We create for every age and audience, anchored by the strength of our content and experiences and the depth of our connection with fans. We are creator-first, audience-focused, tech-forward, globally scaled. Here, you’ll work with talented teams that move fast, think boldly and collaborate with purpose to deliver results. We aim high, champion the best ideas and win together, earning the…",
+      "contact_name": "",
+      "contact_email": "",
+      "contact_phone": "",
+      "ad_url": "https://warnerbros.wd5.myworkdayjobs.com/global/job/NY-New-York-30-Hudson-Yards/Producer--CNN-Visual-Investigations_R000106993-1",
+      "source": "CNN / WBD · Workday",
+      "posted": "2026-10-21",
       "closes": ""
     },
     {
